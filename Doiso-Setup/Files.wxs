@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi"
+xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder" Name="PFiles">
+				<Directory Id="INSTALLDIR" Name="DoISO">
+					<Component Id="DoISO" Guid="F3C4A191-A108-4C05-AF80-9FE8EB2F6C24" DiskId="1">
+						<File Id="AppFile" Name="DoISO.exe" Source="../DoISO/bin/Release/DoISO.exe"
+						Assembly=".net" AssemblyManifest="AppFile" KeyPath="yes" AssemblyApplication="AppFile">
+							<netfx:NativeImage Id="DoISONGenImage" />
+						</File>
+						<!-- Program Menu Shortcut -->
+						<Shortcut Id="startMenuShort" Target="MyFeature" Directory="DoISOMenuFolder" Name="DoISO"
+							WorkingDirectory="INSTALLDIR" Show="normal" Icon="DoISO.exe" IconIndex="0"
+							/>
+						<!-- Desktop Shortcut -->
+						<Shortcut Id="desktopMenuShort" Target="MyFeature" Directory="DesktopFolder" Name="DoISO"
+							WorkingDirectory="INSTALLDIR" Show="normal" Icon="DoISO.exe" IconIndex="0"
+							/>
+						<!-- Right-click folder context menu to DoISO -->
+						<Registry Id='RegFolderContext' Root='HKLM' Key='SOFTWARE\Classes\Folder\shell\DoISO\Command' 
+						  Action='write' Type='string'>
+						  <RegistryValue>[INSTALLDIR]DoISO.exe "%L"</RegistryValue>
+						</Registry>
+						<!-- Right-click ISO context menu to DoISO -->
+						<Registry Id='RegISOContext' Root='HKCR' Key='Virtual.Machine.Iso.File\shell\Burn With DoISO\Command' 
+						  Action='write' Type='string'>
+						  <RegistryValue>[INSTALLDIR]DoISO.exe "%L" -burn</RegistryValue>
+						</Registry>
+					</Component>
+					<Component Id="ProcessCaller" Guid="83D88C64-D2A3-4F1C-9BFB-8C21688868D7" DiskId="1">
+						<File Id="procFile" Name="Proc.dll" LongName="ProcessCaller.dll" Source="../DoISO/bin/Release/ProcessCaller.dll"/>
+					</Component>
+					<Component Id="Aqua" Guid="8FCBE6D4-2C78-48F4-8914-FB84FCD868B4" DiskId="1">
+						<File Id="AquaFile" Name="Aqua.dll" LongName="Wildgrape.Aqua.Controls.dll" Source="../DoISO/bin/Release/Wildgrape.Aqua.Controls.dll"/>
+					</Component>
+					<Component Id="mkisofs" Guid="844F4AA2-E156-4000-A845-A04A548F0EDC" DiskId="1">
+						<File Id="mkisoFile" Name="mkisofs.exe" Source="../DoISO/bin/Release/mkisofs.exe"/>
+					</Component>
+					<Component Id="License" Guid="36296BC8-3078-409F-981D-76F8C728E14F" DiskId="1">
+						<File Id="LicenseFile" Name="license.rtf" Source="license.rtf"/>
+					</Component>
+				</Directory>
+			</Directory>
+			<!-- Subfolder inside the Program Menu Folder -->
+        	<Directory Id="ProgramMenuFolder" Name="PMFolder">
+	        	<Directory Id="DoISOMenuFolder" Name="DoISO">
+	        	</Directory>
+        	</Directory>
+			<!-- Desktop shortcut location -->
+			<Directory Id="DesktopFolder" Name="Desktop" />
+		</Directory>
+	</Fragment>
+</Wix>

@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 3.1.1.5246
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessCaller", "ProcessCaller\ProcessCaller.csproj", "{E5BEA0CB-184B-4186-BB4C-EFF70243C835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aqua Controls", "..\AquaControls\Aqua Controls.csproj", "{3F8F6730-4A70-4A8F-95C4-CBADBFCBF5E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoISO", "..\DoISO.ConvertedToC#\DoISO.csproj", "{D7D00BF1-337E-4726-A501-C45F72A243E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5BEA0CB-184B-4186-BB4C-EFF70243C835}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BEA0CB-184B-4186-BB4C-EFF70243C835}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BEA0CB-184B-4186-BB4C-EFF70243C835}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BEA0CB-184B-4186-BB4C-EFF70243C835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F8F6730-4A70-4A8F-95C4-CBADBFCBF5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F8F6730-4A70-4A8F-95C4-CBADBFCBF5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F8F6730-4A70-4A8F-95C4-CBADBFCBF5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F8F6730-4A70-4A8F-95C4-CBADBFCBF5E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D00BF1-337E-4726-A501-C45F72A243E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D00BF1-337E-4726-A501-C45F72A243E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D00BF1-337E-4726-A501-C45F72A243E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D00BF1-337E-4726-A501-C45F72A243E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

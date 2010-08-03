@@ -1,0 +1,6 @@
+﻿Microsoft Visual Studio Solution File, Format Version 9.00
+# SharpDevelop 2.1.0.9999
+Project("{CFEE4113-1246-4D54-95CB-156813CB8593}") = "Doiso-Setup", "Doiso-Setup.wixproj", "{A8B76BC3-1BA7-453D-8C25-9277419EC35C}"
+EndProject
+Global
+EndGlobal

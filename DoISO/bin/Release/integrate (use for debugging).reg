@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Folder\shell\DoISO\Command]
+@="D:\\TroyDevel\\doiso\\DoISO\\bin\\Release\\DoISO.exe \"%L\""
+
+
+
+[HKEY_CLASSES_ROOT\Virtual.Machine.Iso.File\shell\Burn With DoISO\Command]
+@="D:\\TroyDevel\\doiso\\DoISO\\bin\\Release\\DoISO.exe \"%L\" -burn"

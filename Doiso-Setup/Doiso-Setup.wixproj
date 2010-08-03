@@ -1,0 +1,52 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <OutputName>Doiso-Setup</OutputName>
+    <OutputType>package</OutputType>
+    <WixToolPath Condition=" '$(WixToolPath)' == '' ">$(SharpDevelopBinPath)\Tools\Wix</WixToolPath>
+    <ToolPath Condition=" '$(ToolPath)' == '' ">$(WixToolPath)</ToolPath>
+    <WixMSBuildExtensionsPath>$(SharpDevelopBinPath)\Tools\Wix</WixMSBuildExtensionsPath>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <RootNamespace>Doiso_Setup</RootNamespace>
+    <DefineConstants>DATADIR=$(SharpDevelopBinPath)\..\data\resources\InstallerBitmaps</DefineConstants>
+    <ProjectGuid>{A8B76BC3-1BA7-453D-8C25-9277419EC35C}</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <BaseOutputPath>obj\</BaseOutputPath>
+    <IntermediateOutputPath>obj\Debug\</IntermediateOutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <BaseOutputPath>obj\</BaseOutputPath>
+    <IntermediateOutputPath>obj\Release\</IntermediateOutputPath>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Setup.wxs" />
+    <Compile Include="Files.wxs" />
+    <Compile Include="SelectFolderDialog.wxs" />
+    <Compile Include="VerifyReadyDialog.wxs" />
+    <Compile Include="ViewLicenseAgreementDialog.wxs" />
+    <Compile Include="WelcomeDialog.wxs" />
+    <Compile Include="ProgressDialog.wxs" />
+    <Compile Include="CancelDialog.wxs" />
+    <Compile Include="BrowseDialog.wxs" />
+    <Compile Include="UserExitDialog.wxs" />
+    <Compile Include="ExitDialog.wxs" />
+    <Compile Include="OutOfDiskSpaceDialog.wxs" />
+    <Compile Include="OutOfRollbackDiskSpaceDialog.wxs" />
+    <Compile Include="FatalErrorDialog.wxs" />
+    <Compile Include="UserInterface.wxs" />
+    <None Include="license.rtf" />
+    <CompileExtension Include="WixNetFxExtension">
+      <Class>Microsoft.Tools.WindowsInstallerXml.Extensions.NetFxCompiler</Class>
+    </CompileExtension>
+    <LibExtension Include="WixNetFxExtension">
+      <Class>Microsoft.Tools.WindowsInstallerXml.Extensions.NetFxCompiler</Class>
+    </LibExtension>
+    <LinkExtension Include="WixNetFxExtension">
+      <Class>Microsoft.Tools.WindowsInstallerXml.Extensions.NetFxCompiler</Class>
+    </LinkExtension>
+    <WixLibrary Include="..\..\..\..\Sources\SharpDevelopUpdates\SharpDevelop2.1\src\Tools\wix\netfx.wixlib" />
+  </ItemGroup>
+  <Import Project="$(WixMSBuildExtensionsPath)\wix.targets" />
+</Project>

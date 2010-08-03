@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi"
+xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+	<Product Id="79EFF529-C306-41DC-81D9-17F181DF287A"
+		Name="DoISO"
+		Language="1033"
+		Version="2.0.0.6"
+		Manufacturer="ebswift.com">
+		<Package Id="F554CBF6-46B6-11DB-8AF6-B622A1EF5492"
+			Description="DoISO"
+			Comments="Free, open source ISO maker and CD/DVD burner."
+			InstallerVersion="200"
+			Compressed="yes"/>
+		
+		<Property Id="AcceptLicense">No</Property>
+		
+		<!--BUTTON TEXT-->
+		<Property Id="Button_Back">&lt; &amp;Back</Property>
+		<Property Id="Button_Next">&amp;Next &gt;</Property>
+		<Property Id="Button_Finish">&amp;Finish</Property>
+		
+		<Property Id="Button_OK">OK</Property>
+		<Property Id="Button_Cancel">Cancel</Property>
+		
+		<Property Id="Button_Browse">Br&amp;owse...</Property>
+		<Property Id="Button_Exit">&amp;Exit</Property>
+		<Property Id="Button_Ignore">&amp;Ignore</Property>
+		<Property Id="Button_Install">&amp;Install</Property>
+		<Property Id="Button_Remove">&amp;Remove</Property>
+		<Property Id="Button_Repair">&amp;Repair</Property>
+		<Property Id="Button_Reset">&amp;Reset</Property>
+		<Property Id="Button_Resume">&amp;Resume</Property>
+		<Property Id="Button_Retry">&amp;Retry</Property>
+		<Property Id="Button_Return">&amp;Return</Property>
+		
+		<Property Id="Button_Yes">&amp;Yes</Property>
+		<Property Id="Button_No">&amp;No</Property>
+		<!--END BUTTON TEXT-->
+		
+		<CustomAction Id="SET_INSTALLDIR" Property="INSTALLDIR" Value="[INSTALLDIR]" Execute="firstSequence" />
+		
+		<!-- INSTALL DESCRIPTION -->
+		<Media Id="1" Cabinet="contents.cab" EmbedCab="yes" />
+		
+		<!-- Program Icon -->
+		<Icon Id="DoISO.exe" SourceFile="../Images/DoISO.ico" />
+
+		<Feature Id="MyFeature" Title="Required Files" Level="1">
+			<ComponentRef Id="DoISO" />
+			<ComponentRef Id="ProcessCaller" />
+			<ComponentRef Id="Aqua" />
+			<ComponentRef Id="mkisofs" />
+			<ComponentRef Id="License" />
+		</Feature>	
+		<!-- END INSTALL DESCRIPTION -->
+		
+		<AdminExecuteSequence>
+		</AdminExecuteSequence>
+		
+		<InstallExecuteSequence>
+		</InstallExecuteSequence>
+
+		<UIRef Id="UserInterface"/>
+	</Product>
+</Wix>
